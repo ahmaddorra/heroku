@@ -29,6 +29,6 @@ def predict():
     logging.info("prediction from model= {}".format(prediction))
     return jsonify({"translation": str(prediction)})
 
-# Create the main driver function
-port = int(os.environ.get("PORT", 5000)) # <-----
-app.run(host='0.0.0.0', port=port)       # <-----
+# # Create the main driver function
+# port = int(os.environ.get("PORT", 5000)) # <-----
+# app.run(host='0.0.0.0', port=port)       # <-----

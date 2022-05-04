@@ -27,8 +27,10 @@ class Translate:
         y_id_to_word = {value: key for key, value in fr_tokenizer.word_index.items()}
         y_id_to_word[0] = '<PAD>'
 
+        logging.info(text)
+
         sentence = en_tokenizer.texts_to_sequences([text])
-        # sentence = pad_sequences(sentence, maxlen=15, padding='post')
+        sentence = pad_sequences(sentence, maxlen=15, padding='post')
         predictions = self.model.predict(sentence)
 
         return ' '.join([y_id_to_word[np.argmax(x)] for x in predictions[0]])

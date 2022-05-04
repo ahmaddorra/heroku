@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <form id="Translate-form" method="GET" action="https://challengeahmad2.herokuapp.com/translate">
+    <form id="translate-form" method="GET" action="https://challengeahmad2.herokuapp.com/translate">
       <label for="to-translate">Enter English Sentence<label>
       <input type="text" name="to-translate" id="to-translate" />
       <button type="submit">Translate</button>
@@ -14,12 +14,12 @@
     <h4>Translation</h4>
     <p id="translation"><p>
 
-      
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
     jQuery(document).ready(function(){
 
-    jQuery('.ajaxform').submit( function() {
+    jQuery('#translate-form').submit( function() {
 
         $.ajax({
             url     : $(this).attr('action'),

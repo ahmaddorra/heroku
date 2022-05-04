@@ -18,8 +18,6 @@ logging.basicConfig(level=logging.INFO)
 def index():
     return render_template('index.html')
 
-if __name__ == '__main__':
-  app.run(host='0.0.0.0',debug=True, port=os.environ.get("PORT", 5000))
 
 @app.route("/translate", methods=["GET"])
 def predict():
@@ -34,3 +32,6 @@ def predict():
 # # Create the main driver function
 # port = int(os.environ.get("PORT", 5000)) # <-----
 # app.run(host='0.0.0.0', port=port)       # <-----
+
+if __name__ == '__main__':
+  app.run(host='0.0.0.0',debug=True, port=os.environ.get("PORT", 5000))

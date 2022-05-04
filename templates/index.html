@@ -6,10 +6,32 @@
 </head>
 <body>
 
-    <form id="Translate-form">
-      <input type="text" name="to-translate" />
+    <form id="Translate-form" method="GET" action="https://challengeahmad2.herokuapp.com/translate">
+      <label for="to-translate">Enter English Sentence<label>
+      <input type="text" name="to-translate" id="to-translate" />
       <button type="submit">Translate</button>
-
     </form>
+    <h4>Translation</h4>
+    <p id="translation"><p>
+
+    <script>
+    jQuery(document).ready(function(){
+
+    jQuery('.ajaxform').submit( function() {
+
+        $.ajax({
+            url     : $(this).attr('action'),
+            type    : $(this).attr('method'),
+            data    : $(this).serialize(),
+            success : function( response ) {
+              $("#translation").html(response.translation)
+            }
+        });
+
+        return false;
+    });
+
+});
+    </script>
 </body>
 </html>

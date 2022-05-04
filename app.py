@@ -21,7 +21,7 @@ def index():
 if __name__ == '__main__':
   app.run(host='0.0.0.0',debug=True, port=os.environ.get("PORT", 5000))
 
-@app.route("/v1/translate", methods=["GET", "POST"])
+@app.route("/translate", methods=["GET"])
 def predict():
     """Provide main prediction API route. Responds to both GET and POST requests."""
     logging.info("Predict request received!")

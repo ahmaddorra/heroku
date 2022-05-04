@@ -14,11 +14,11 @@ class Translate:
         logging.info("Model is loaded!")
 
     def predict(self, text):
-        frFile = open("fr_tokenizer.json", mode='r')
+        frFile = open("./model/fr_tokenizer.json", mode='r')
         fr_data = json.load(frFile)
         fr_tokenizer = tokenizer_from_json(fr_data)
 
-        enFile = open("en_tokenizer.json", mode='r')
+        enFile = open("./model/en_tokenizer.json", mode='r')
         en_data = json.load(enFile)
         en_tokenizer = tokenizer_from_json(en_data)
 

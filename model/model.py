@@ -5,6 +5,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
+import json
 import logging
 
 class Translate:
